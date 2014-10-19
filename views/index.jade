@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  body.container
+    form.form-horizontal(role='form', action='/submitTrackingRequest', method='post')
+      h1.form-horizontal-heading Get stockd
+      div
+        div.col-sm-2
+        div#URLmessage.alert.col-sm-10
+      div.form-group
+        label.col-sm-2.control-label(for='urlInput') Product URL
+        div.col-sm-10
+          input#urlInput.form-control(type='url', name='productURL', placeholder='Product URL', autofocus)
+      div.form-group.hidden
+        div.col-sm-2
+        div#productInfo.col-sm-10
+          h2#retailer.form-horizontal-heading
+          h3#brandProduct.form-horizontal-heading
+          img#productImage.img-responsive(src='')
+          h3#priceText.form-horizontal-heading.price
+          input#price(type='hidden', name='price')
+          input#productName(type='hidden', name='productName')
+          input#retailerInput(type='hidden', name='retailer')
+      div.form-group.hidden
+        label.col-sm-2.control-label(for='color') Color
+        div.col-sm-10
+          select#color.form-control(name='color')
+      div.form-group.hidden
+        label.col-sm-2.control-label(for='size') Size
+        div.col-sm-10
+          select#size.form-control(name='size')
+      div.form-group.hidden
+        div.col-sm-2
+        div#sizeMessage.col-sm-10
+      div.form-group.hidden
+        label.col-sm-2.control-label(for='email') Email
+        div.col-sm-10
+          input#email.form-control(type='email', name='email', placeholder='me@gmail.com')
+      div.form-group.hidden
+        div.col-sm-2
+        div.col-sm-10
+          button#submit.btn.btn-primary.btn-lg.btn-default(type='submit') Email me when it's available
+
+block append scripts
+  script(src='/javascripts/index.js')
